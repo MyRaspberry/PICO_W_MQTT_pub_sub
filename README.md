@@ -42,9 +42,6 @@ nuke flash **CP810**
 timing mqtt_client.loop() 0.001xxx sec
 1Mloop 59.1 sec
 
-if use it without timeout parameter:
-![Screenshot PICO_W_IDE show time ](/img/PICOW_mqtt_test_pub_sub_REMOTE_TLS_client_loop_NoTimeSet_CP810.png)
-
 TLS also not work, but copy in adafruit_minimqtt from  21.12.2022 OK</br>
 ( a trick i used back then and found the files in my backup )
 
@@ -52,5 +49,11 @@ make set of new alias mqttxubR in RPI4 and show/operate **REMOTE broker**
 
 ![Screenshot REMOTE broker TLS ](/img/PICOW_mqtt_test_pub_sub_REMOTE_TLS.png)
 
+if use it without timeout parameter:
+![Screenshot PICO_W_IDE show time ](/img/PICOW_mqtt_test_pub_sub_REMOTE_TLS_client_loop_NoTimeSet_CP810.png)
+______________
+> more old info to this
+[old TLS ISSUE](https://github.com/adafruit/circuitpython/issues/7606)
+[old BLOG: upgrade to CP829 in HOLD for timing and memory issues](http://kll.byethost7.com/kllfusion01/infusions/articles/articles.php?article_id=225)
 ______________
 
