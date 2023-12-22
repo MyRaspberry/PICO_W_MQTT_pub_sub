@@ -5,7 +5,7 @@ on a PICO W with CP829
 
 a minimal MQTT 
 * publish every minute
-* subscribe ( and loop ) to remote commands
+* subscribe ( and loop ) to remote commands to drive the board LED : **MQTT BLINKY**
 
 PROBLEM: the 'mqtt_client.loop()' waits over 1 second and blocks the MAIN timer loop
 
