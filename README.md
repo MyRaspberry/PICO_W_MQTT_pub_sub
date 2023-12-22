@@ -19,6 +19,8 @@ ______________
 ```
 but **remote operation ( of board LED ) works**
 
+[open ISSUE](https://github.com/adafruit/Adafruit_CircuitPython_MiniMQTT/issues/195)
+
 ______________
 # on RPI4 is a 'mosquitto broker' running
 
