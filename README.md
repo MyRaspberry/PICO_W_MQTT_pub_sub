@@ -42,6 +42,8 @@ nuke flash **CP810**
 timing mqtt_client.loop() 0.001xxx sec
 1Mloop 59.1 sec
 
+if use it without timeout parameter:
+![Screenshot PICO_W_IDE show time ](/img/PICOW_mqtt_test_pub_sub_REMOTE_TLS_client_loop_NoTimeSet_CP810.png)
 
 TLS also not work, but copy in adafruit_minimqtt from  21.12.2022 OK</br>
 ( a trick i used back then and found the files in my backup )
