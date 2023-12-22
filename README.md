@@ -53,7 +53,9 @@ if use it without timeout parameter:
 ![Screenshot PICO_W_IDE show time ](/img/PICOW_mqtt_test_pub_sub_REMOTE_TLS_client_loop_NoTimeSet_CP810.png)
 ______________
 > more old info to this
+
 [old TLS ISSUE](https://github.com/adafruit/circuitpython/issues/7606)
-[old BLOG: upgrade to CP829 in HOLD for timing and memory issues](http://kll.byethost7.com/kllfusion01/infusions/articles/articles.php?article_id=225)
+
+[work BLOG: upgrade to CP829 in HOLD for timing and memory issues](http://kll.byethost7.com/kllfusion01/infusions/articles/articles.php?article_id=225)
 ______________
 
