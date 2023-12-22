@@ -159,10 +159,10 @@ def JOB1sec() :
     if nowsec != nowseclast :
         nowseclast = nowsec
         print(".",end="")
-        ts=time.monotonic()
+        #ts=time.monotonic()
         #mqtt_client.loop() # every second check if remote command comes in
         mqtt_client.loop(timeout=0.01)
-        print(f"___ mqtt_client loop {(time.monotonic()-ts)} sec")
+        #print(f"___ mqtt_client loop {(time.monotonic()-ts)} sec")
 
 nowmin=0
 nowminlast=0
@@ -171,22 +171,35 @@ def JOB1min() :
     global nowminlast
     if nowmin != nowminlast :
         nowminlast = nowmin
-        print("\n1min:",nows)
+        print(f"\n1min:{nows}")
         mqtts = f"{nows}"
         mqtt_client.publish(MQTT_mtopic,mqtts )
 
 loop1M=0
+loop1Msec=time.monotonic()
 
 def JOB1M() :
-    global loop1M
+    global loop1M,loop1Msec
     loop1M += 1
     if loop1M >= 1000000 :
         loop1M = 0
-        print("\n1Mloop at ",nows)
+        loop1Msecnow = time.monotonic()
+        dt = loop1Msecnow-loop1Msec
+        loop1Msec = loop1Msecnow # remember
+        print(f"\n1Mloop needed {dt:,.1f} sec")
+        #mqtts = f"{nows} 1Mloop {dt:,.1f} sec"
+        #mqtt_client.publish(MQTT_mtopic,mqtts ) # diagnostic only
+
 
 # _________________________________________________________ MAIN
 while True:
-    JOBt() # nows = time_now()
-    JOB1sec()
-    JOB1min()
-    JOB1M()
+    JOBt() # ______________________________________________ nows = time_now() and set sec and min ticks
+    JOB1sec() # ___________________________________________ mqtt_client.loop()
+    JOB1min() # ___________________________________________ mqtt publish
+    JOB1M() # _____________________________________________ job loop performance
+
+# JOB1M : 14.8 sec
+# JOB1M + JOB1min : 26.5 sec
+# JOB1M + JOB1min + JOB1sec : 38.1 sec
+# JOB1M + JOB1min + JOB1sec + JOBt : 56.2 sec
+# and enable in JOB1sec mqtt_client.loop(timeout=0.01) : 1524.1 sec
