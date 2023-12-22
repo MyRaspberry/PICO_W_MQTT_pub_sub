@@ -13,4 +13,8 @@ PROBLEM: the 'mqtt_client.loop()' waits over 1 second and blocks the MAIN timer 
 
 use some alias to show the feed from the PICO_W and to drive commands ( pub to topic/set )
 
-![Screenshot RPI4 ](/imag/RPI4_MQTT.png)
+![Screenshot RPI4 ](/img/RPI4_MQTT.png)
+
+![Screenshot PICO_W IDE ](/img/PICOW_mqtt_test_pub_sub.png)
+
+![Screenshot PICO_W_IDE show time ](/img/PICOW_mqtt_test_pub_sub.png)
