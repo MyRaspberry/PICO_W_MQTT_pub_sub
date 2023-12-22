@@ -32,3 +32,14 @@ topic/set commands come through if there is a 'mqtt_client.loop()'
 ![Screenshot PICO_W IDE ](/img/PICOW_mqtt_test_pub_sub.png)
 here show the problematic timing
 ![Screenshot PICO_W_IDE show time ](/img/PICOW_mqtt_test_pub_sub_loopdt.png)
+
+______________
+try on TLS again, not work CP829, 
+
+not work **CP810** but copy in adafruit_minimqtt from  21.12.2022 OK
+
+![Screenshot REMOTE broker TLS ](/img/PICOW_mqtt_test_pub_sub_REMOTE_TLS.png)
+
+make set of new alias mqttxubR
+______________
+
