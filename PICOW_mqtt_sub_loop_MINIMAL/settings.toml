@@ -1,0 +1,14 @@
+# __________________________________________________ LAN WIFI
+WIFI_SSID = "___SSID___"
+WIFI_PASSWORD = "___PASS___"
+# __________________________________________________ LOCATION TIME ZONE
+useNTP = 1 # _______________________________________ try NTP to RTC update
+TZ_OFFSET = 7 # ____________________________________ LOCATION TIME ZONE
+
+# __________________________________________________ local RPI4 as broker and BRIDGE
+MQTT_broker="192.168.1.104"
+MQTT_port = 1883
+MQTT_user = "uPICOW"
+MQTT_pass = "pPICOW"
+# __________________________________________________ TOPIC publish to RPI3:
+MQTT_mtopic="PICOW"
