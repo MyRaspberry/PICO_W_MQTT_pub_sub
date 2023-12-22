@@ -8,7 +8,14 @@ a minimal MQTT
 * subscribe ( and loop ) to remote commands to drive the board LED : **MQTT BLINKY**
 
 PROBLEM: the 'mqtt_client.loop()' waits over 1 second and blocks the MAIN timer loop
-
+______________
+```# JOB1M : 14.8 sec
+# JOB1M + JOB1min : 26.5 sec
+# JOB1M + JOB1min + JOB1sec : 38.1 sec
+# JOB1M + JOB1min + JOB1sec + JOBt : 56.2 sec
+# and enable in JOB1sec mqtt_client.loop(timeout=0.01) : 1524.1 sec
+```
+______________
 # on RPI4 is a 'mosquitto broker' running
 
 use some alias to show the feed from the PICO_W and to drive commands ( pub to topic/set )
