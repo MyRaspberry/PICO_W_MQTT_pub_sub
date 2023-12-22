@@ -1,7 +1,7 @@
 # PICO_W_MQTT_pub_sub
  subscription loop SLOW
 
-on a PICO W with CP829
+on a **PICO W with CP829**
 
 a minimal MQTT 
 * publish every minute
@@ -17,7 +17,7 @@ ______________
 # JOB1M + JOB1min + JOB1sec + JOBt : 56.2 sec
 # and enable in JOB1sec mqtt_client.loop(timeout=0.01) : 1524.1 sec
 ```
-but remote operation works
+but **remote operation ( of board LED ) works**
 
 ______________
 # on RPI4 is a 'mosquitto broker' running
