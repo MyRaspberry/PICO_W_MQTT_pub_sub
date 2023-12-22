@@ -23,7 +23,7 @@ import board
 import digitalio
 led = digitalio.DigitalInOut(board.LED)
 led.direction = digitalio.Direction.OUTPUT
-led.value = True  # _________________________________________ after boot LED ON helps to see its working.. at a timed job ( here getAins() ) blink
+led.value = True  # ________________ after boot LED ON helps to see its working.. can be operated remotely by MQTT
 print("___+++ board LED ON")
 
 import time
@@ -72,7 +72,7 @@ def message(client, topic, message):
         if message == "0" :
             LEDsp = False
         led.value = LEDsp
-        print(f"LED {LEDsp}")
+        print(f"___+++ board LED {LEDsp}")
 
 # _______________________________________________ router login
 wifi.radio.connect(WIFI_SSID, WIFI_PASSWORD)
