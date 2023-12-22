@@ -36,10 +36,19 @@ here show the problematic timing
 ______________
 try on TLS again, not work CP829, 
 
-not work **CP810** but copy in adafruit_minimqtt from  21.12.2022 OK
+______________
+
+nuke flash **CP810** 
+timing mqtt_client.loop() 0.001xxx sec
+1Mloop 59.1 sec
+
+
+TLS also not work, but copy in adafruit_minimqtt from  21.12.2022 OK</br>
+( a trick i used back then and found the files in my backup )
+
+make set of new alias mqttxubR in RPI4 and show/operate **REMOTE broker**
 
 ![Screenshot REMOTE broker TLS ](/img/PICOW_mqtt_test_pub_sub_REMOTE_TLS.png)
 
-make set of new alias mqttxubR
 ______________
 
