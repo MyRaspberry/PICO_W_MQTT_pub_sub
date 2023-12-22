@@ -9,7 +9,7 @@ a minimal MQTT
 
 PROBLEM: the 'mqtt_client.loop()' waits over 1 second and blocks the MAIN timer loop
 
-# on RPI4 is a mosquiito broker running
+# on RPI4 is a 'mosquitto broker' running
 
 use some alias to show the feed from the PICO_W and to drive commands ( pub to topic/set )
 
