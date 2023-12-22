@@ -19,6 +19,13 @@ MQTT_mtopic = os.getenv('MQTT_mtopic')
 mqtt_topic = MQTT_mtopic
 mqtt_hello= f" {os.uname().machine} with CP{os.uname().version} "
 
+import board
+import digitalio
+led = digitalio.DigitalInOut(board.LED)
+led.direction = digitalio.Direction.OUTPUT
+led.value = True  # _________________________________________ after boot LED ON helps to see its working.. at a timed job ( here getAins() ) blink
+print("___+++ board LED ON")
+
 import time
 import socketpool
 import wifi
@@ -59,6 +66,13 @@ def publish(mqtt_client, userdata, topic, pid):
 
 def message(client, topic, message):
     print("\nmqtt New message on topic {0}: {1}".format(topic, message))
+    if topic =="PICOW/set": # _____________________________________ MQTT REMOTE BLINKY
+        if message == "1" :
+            LEDsp = True
+        if message == "0" :
+            LEDsp = False
+        led.value = LEDsp
+        print(f"LED {LEDsp}")
 
 # _______________________________________________ router login
 wifi.radio.connect(WIFI_SSID, WIFI_PASSWORD)
@@ -146,7 +160,8 @@ def JOB1sec() :
         nowseclast = nowsec
         print(".",end="")
         ts=time.monotonic()
-        mqtt_client.loop() # every second check if remote command comes in
+        #mqtt_client.loop() # every second check if remote command comes in
+        mqtt_client.loop(timeout=0.01)
         print(f"___ mqtt_client loop {(time.monotonic()-ts)} sec")
 
 nowmin=0
