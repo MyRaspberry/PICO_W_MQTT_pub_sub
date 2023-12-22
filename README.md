@@ -17,6 +17,8 @@ ______________
 # JOB1M + JOB1min + JOB1sec + JOBt : 56.2 sec
 # and enable in JOB1sec mqtt_client.loop(timeout=0.01) : 1524.1 sec
 ```
+but remote operation works
+
 ______________
 # on RPI4 is a 'mosquitto broker' running
 
